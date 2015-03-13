@@ -1,0 +1,27 @@
+{
+  "name": "Main Gulp Projects",
+  "version": "1.0.0",
+  "description": "moduler for alle læringsobjekter",
+  "main": "index.js",
+  "scripts": {
+    "test": "hej test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anderstornoe/main_gulp_projects.git"
+  },
+  "keywords": [
+    "key",
+    "words"
+  ],
+  "author": "ato and than",
+  "license": "ISC",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "https://github.com/anderstornoe/main_gulp_projects",
+  "dependencies": {
+    "gulp": "^3.8.11",
+    "gulp-connect": "^2.2.0"
+  }
+}
