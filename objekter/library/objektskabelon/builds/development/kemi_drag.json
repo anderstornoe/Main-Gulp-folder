@@ -1,0 +1,20 @@
+[
+{"name": "Hydrogen",  "sym":"H",  "num":1,   "Z":1,  "A":1.0079},
+{"name": "Helium",    "sym":"He", "num":18,  "Z":2,  "A":4.002602},
+{"name": "Lithium",   "sym":"Li", "num":19,  "Z":3,  "A":6.94},
+{"name": "Beryllium", "sym":"Be", "num":20,  "Z":4,  "A":9.0121831},
+{"name": "Bor",       "sym":"B",  "num":31,  "Z":5,  "A":10.81},
+{"name": "Carbon",    "sym":"C",  "num":32,  "Z":6,  "A":12.011},
+{"name": "Nitrogen",  "sym":"N",  "num":33,  "Z":7,  "A":14.007},
+{"name": "Ilt",       "sym":"O",  "num":34,  "Z":8,  "A":15.999},
+{"name": "Fluor",     "sym":"F",  "num":35,  "Z":9,  "A":18.998403163},
+{"name": "Neon",      "sym":"Ne", "num":36,  "Z":10, "A":17.1797},
+{"name": "Natrium",   "sym":"Na", "num":37,  "Z":11, "A":22.98976928},
+{"name": "Magnesium", "sym":"Mg", "num":38,  "Z":12, "A":24.305},
+{"name": "Aluminium", "sym":"Al", "num":49,  "Z":13, "A":26.9815385},
+{"name": "Silicium",  "sym":"Si", "num":50,  "Z":14, "A":28.085},
+{"name": "Fosfor",    "sym":"P",  "num":51,  "Z":15, "A":30.973761998},
+{"name": "Svovl",     "sym":"S",  "num":52,  "Z":16, "A":32.06},
+{"name": "Klor",      "sym":"Cl", "num":53,  "Z":17, "A":35.45},
+{"name": "Argon",     "sym":"Ar", "num":54,  "Z":18, "A":39.948}
+]

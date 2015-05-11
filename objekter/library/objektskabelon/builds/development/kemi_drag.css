@@ -1,0 +1,31 @@
+body{}
+.PeriodicTableWrapper{ width: 100%; /*border: 1px solid #F00;*/}
+.ElementBox  {position: relative; font-size: 11px; width: 5%; margin: 0.27777%; padding: 3px; display: inline-block; border: 1px solid #00F; line-height: 1.4;}  /* NOTE: 90/18 = 5%, og 5/18 = 0.27777% */
+.DummyElement{position: relative; width: 5%; margin: 0.27777%; padding: 3px; display: inline-block; /*border: 1px solid #F00;*/ }
+.AtomNum     {position: relative; }
+.AtomName    {position: relative; }
+.AtomSymbol  {position: relative; font-size: 18px; }
+.AtomWeight  {position: relative; }
+
+.lbox{width: 12%;}
+.xlbox{width: 16%;}
+.sbox{width: 33%;}
+
+.red{border: 1px solid #F00;}
+
+.DropZone{padding-left: 41%; margin-bottom: 3%}
+.DropCoeff{display: inline-block;}
+.DropElement{display: inline-block;}
+.DropChargeAndIndex{display: inline-block;}
+.DropCharge{}
+.DropIndex{}
+
+.DropHighlight{background-color: #0F0;}
+
+.NumbersWrapper{display: inline-block; width: 50%;} /* border: 1px solid #F00; */
+.IndexWrapper{} /* border: 1px solid #F00; */
+.ChargeWrapper{} /* border: 1px solid #F00; */
+
+.NumberHeading{font-size: 18px;}
+.IndexNum{padding: 3px; margin: 0.5%; display: inline-block; border: 1px solid #00F; font-size: 11px;}
+.ChargeNum{padding: 3px; margin: 0.5%; display: inline-block; border: 1px solid #00F; font-size: 11px;}
