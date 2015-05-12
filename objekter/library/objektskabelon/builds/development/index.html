@@ -1,0 +1,93 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+    <!-- http://www.robotstxt.org/meta.html  -->  
+    <meta name="robots" content="noindex, nofollow" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Kemi C - princip 1</title>
+    <meta name="author" content="ato" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Midlertidig: Nedenstående skal ikke køres fra CDN -->
+<!-- 
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+ -->
+
+    <link rel="stylesheet" href="../../../library/styles.css" type="text/css" />
+    
+    <link rel="stylesheet" href="kemi_drag.css" type="text/css" />
+    <!-- Date: 2012-08-07 -->
+</head>
+
+<body>
+    <div class="container-fluid">
+
+        <h3>Hypotetisk test</h3>
+        <h4>Træk: Hydrogen, ladning = -4 og index = 1 på deres respektive pladser</h4>
+        
+        <div class="col-xs-12">
+
+            <div class="DropZone"> 
+                <div class="DropCoeff red lbox droppable"> 
+                </div>
+                <div class="DropElement red lbox droppable"> 
+                </div>
+                <div class="DropChargeAndIndex lbox">
+                    <div class="DropCharge red sbox droppable"> 
+                    </div> 
+                    <div class="sbox"> 
+                    </div>
+                    <div class="DropIndex red sbox droppable"> 
+                    </div> 
+                </div>
+                <div class="NumbersWrapper"> 
+                    <div class="NumberHeading">
+                        Index
+                    </div>
+                    <span class="IndexWrapper"> 
+                        df dfb dgbgn
+                    </span>
+                    
+                    <div class="NumberHeading">
+                        Charge
+                    </div>
+                    <span class="ChargeWrapper"> 
+                        sfn sfgn fsgn
+                    </span>
+                </div>
+            </div>
+
+            <div class="PeriodicTableWrapper"> 
+            </div>
+        </div>
+    </div>
+
+    <!-- Midlertidig: Nedenstående skal ikke køres fra CDN -->  
+<!--     
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+ -->
+    <script src="../../../library/vendor_scripts.js"></script>
+    <script src="kemi_drag.js"></script>
+   
+    <script>
+        // alert ($.fn.jquery); 
+        loadData("kemi_drag.json");
+    </script>
+<!-- 
+    <script src="../../shared components/shared_functions.js"></script>
+    <script type="text/javascript">
+       /* $(document).ready(function() {
+            GeneralOverlayObj.ApplyOverlay_why(".embed-responsive", "vid_an");
+            GeneralOverlayObj.ApplyOverlay_how(".embed-responsive", "vid_an");
+            footer();
+        });*/
+    </script>
+ -->    
+</body>
+
+</html>
+
+
