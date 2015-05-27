@@ -1,1 +1,1 @@
-//alert ("test_functions calling!");
+console.log("test_functions calling!");
