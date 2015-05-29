@@ -12,15 +12,15 @@
      jsSources,
      htmlSources,
      cssSources,
-     outputDir;
+     //outputDir;
 
 
  jsSources = [
      'bower_components/jquery/dist/jquery.js',
      'bower_components/jquery-ui/jquery-ui.js',
      'bower_components/bootstrap/dist/js/bootstrap.js',
-     'bower_components/jquery-ui-touch-punch/jquery.ui.touch-punch.js'
-     //'components/test.js'
+     'bower_components/jquery-ui-touch-punch/jquery.ui.touch-punch.js',
+     'components/test.js'
  ];
 
  cssSources = [
@@ -33,6 +33,7 @@
  });
 
  gulp.task('js', function() {
+    // Concat evt egne scripts til shared_functions.js 
      gulp.src(jsSources)
          //.on('error', swallowError)
          .pipe(concat("vendor_scripts.js"))
@@ -42,7 +43,7 @@
          .pipe(connect.reload())
  });
 
- gulp.task('reloadjs', function() {
+ gulp.task('reload', function() {
      gulp.src('objekter/**/builds/development/*.js')
          //.on('error', swallowError)
          //.pipe(concat("vendor_scripts.js"))
@@ -61,17 +62,14 @@
          .pipe(minifyCSS({
              compatibility: 'ie8'
          }))
-         .pipe(gulp.dest('objekter/library'))
+         .pipe(gulp.dest('objekter/library/css'))
          .pipe(connect.reload())
-         
+
  });
 
  gulp.task('watch', function() {
-    gulp.watch('objekter/**/builds/development/*.js', ['reloadjs']);
-    gulp.watch('builds/development/*.html', ['html', 'lint']);
-    gulp.watch(cssSources, ['css']);
-    
-});
+     gulp.watch(['objekter/**/builds/development/*.js', 'objekter/**/builds/development/*.html', 'objekter/**/builds/development/*.css'], ['reload']);
+ });
 
 
  gulp.task('connect', function() {
@@ -82,4 +80,4 @@
      gutil.log("Hej fra connect");
  });
 
- gulp.task('default', ['js', 'connect', 'css', 'watch','log']);
+ gulp.task('default', ['js', 'connect', 'css', 'watch', 'log']);
