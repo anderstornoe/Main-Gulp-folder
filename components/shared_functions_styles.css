@@ -25,6 +25,8 @@
                 color: rgba(0, 0, 0, 0.5);
               }
 
+.CapitalI{font-family: "Georgia"; font-weight: 100;}
+
 .left{float: left;}
 .right{float: right;}
 .clear{clear: both;} 
