@@ -413,5 +413,32 @@ function embedlink(obj) {
 
 
 
+// This function surrounds all letters (or clusters of letters) in LetterArray with span-tags with a class specified in LetterClassArray.
+// NOTE: The delimiter should be a character (eg. "#"), or a combination of characters (eg. "-X-"), that does not exist in the target text.
+// IMPORTANT: HTML-tags must not be present in the target-text. This could result in invalid/broken markup.
+// EXAMPLE CALL:
+//          MarkCertainCharactersAsSpecial([".AtomName", ".AtomSymbol"], ["H","L", "S"], ["FontGreen", "FontRed", "FontBlue"], "#");
+// - which will make all L's red and all H's green in the text-strings associated with the target CSS classes ".AtomName" and ".AtomSymbol".
+function MarkCertainCharactersAsSpecial(TargetSelectorArray, LetterArray, LetterClassArray, Delimiter){
+    for (var TargetSelector in TargetSelectorArray){
+        $(TargetSelectorArray[TargetSelector]).each(function( index, element ) {
+            for (var l in LetterArray){ // First surround all letters (or clusters of letters) in LetterArray with delimiters, eg. If letter = L and delimiter = #, then #L#.
+                var ElementText = $(element).text();
+                if (ElementText.indexOf(LetterArray[l]) !== -1){
+                    $(element).html( ElementText.replace(LetterArray[l], Delimiter + LetterArray[l] + Delimiter) );
+                }
+            }
+
+            for (var l in LetterArray){// second, replace all delimited letters, eg. #L#, with <span class="MyClass">L</span>
+                var LetterClass = (LetterClassArray.length == LetterArray.length) ? LetterClassArray[l] : LetterClassArray[0]; 
+                var ElementText = $(element).text();
+                if (ElementText.indexOf(LetterArray[l]) !== -1){
+                    $(element).html( ElementText.replace( Delimiter + LetterArray[l] + Delimiter, '<span class="'+LetterClass+'">'+LetterArray[l]+'</span>' ) );
+                }
+            }
+        });
+    }
+}
+
 
 /// INDLEJLRING SLUT !
