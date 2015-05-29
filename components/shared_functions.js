@@ -128,6 +128,26 @@ function MarkCertainCharactersAsSpecial(TargetSelectorArray, LetterArray, Letter
         });
     }
 }
+ 
+// Example of use:
+//      UserMsgBox(".FeedbackWrap", "Hurra - korrekt svar!");
+// where the class FeedbackWrap is the target selector in which the UserMsgBox will appear.
+function UserMsgBox(TargetSelector, UserMsg){
+
+    var HTML = "<h6 id='UserMsgBox'>";
+    HTML += '<span class="CloseClass right glyphicon glyphicon-remove"></span><span class="clear"></span>';
+    HTML += UserMsg;
+    HTML += "</h6> ";
+
+    $(TargetSelector).html(HTML);  
+
+    $("#UserMsgBox").fadeIn( "slow" );
+
+    $( document ).on('click', "#UserMsgBox", function(event){
+        event.preventDefault();  // Prevents sending the user to "href".
+        $("#UserMsgBox").fadeOut( "slow" );
+    });
+}
 
 
 /// INDLEJLRING SLUT !
