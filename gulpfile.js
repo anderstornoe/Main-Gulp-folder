@@ -21,9 +21,6 @@
      'bower_components/bootstrap/dist/js/bootstrap.js',
      'bower_components/jquery-ui-touch-punch/jquery.ui.touch-punch.js'
      //'components/test.js'
-     
-
-
  ];
 
  cssSources = [
