@@ -150,4 +150,64 @@ function UserMsgBox(TargetSelector, UserMsg){
 }
 
 
+// Dette er en hjælpefunktion til funktionen ChemLatexToHtml() forneden:
+function LatexEnclosedPramToHtml(LatexStr, Delimiter){
+
+    var StartPos = 0; var EndPos = 0; var Val = ""; var count = 0;
+    do {
+        StartPos = LatexStr.indexOf(Delimiter+"{", EndPos); 
+        if (StartPos !== -1){
+            EndPos = LatexStr.indexOf("}", StartPos+2);
+            if (EndPos !== -1){
+                Val = LatexStr.substring(StartPos+2, EndPos);
+                LatexStr = LatexStr.substring(0,StartPos) + ((Delimiter == "^")?'<sup>'+Val+'</sup>':'<sub>'+Val+'</sub>') + LatexStr.substring(EndPos+1);
+            }
+            else{
+                alert("Fejl i LaTex udtryk:\nStart-tuborg-parentes "+ String(StartPos) + " tegn inde i LaTex-udtrykket har ikke en slut-tuborg-parentes!");
+                break;
+            }
+        }
+        ++count;
+    } while ((StartPos !== -1) &&  (count < 100));
+
+    return LatexStr;
+}
+
+
+// Dette er en hjælpefunktion til funktionen ChemLatexToHtml() forneden:
+function LatexPramToHtml(LatexStr, Delimiter){
+
+    var StartPos = 0; var Val = ""; var count = 0;
+    do {
+        StartPos = LatexStr.indexOf(Delimiter); 
+        if (StartPos !== -1){
+            Val = LatexStr.substring(StartPos+1, StartPos+2);
+            LatexStr = LatexStr.substring(0,StartPos) + ((Delimiter == "^")?'<sup>'+Val+'</sup>':'<sub>'+Val+'</sub>') + LatexStr.substring(StartPos+2);
+        }
+        ++count;
+    } while ((StartPos !== -1) &&  (count < 100));
+
+    return LatexStr;
+}
+
+
+// Denne funktion oversætter en kemisk formel for et stof skrevet med LaTex tekststreng til et HTML udtryk. 
+// Index tal (de små tal): skrives "_x" for et ciffer, og "_{XX}" for to eller flere cifre.
+// Ladningstal: skrives "^+" eller "^-" for enkelt ladninger og "^{3+}" eller "^{2-}" for at angive flere ladninger.
+// EKSEMPLER: 
+//      (1)     ChemLatexToHtml( "Fe_2(SO_4)_3_{(s)}" );   bliver til:  Fe<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub><sub>(s)</sub>
+//      (2)     ChemLatexToHtml( "3SO_4^{2+}_{(aq)}" );    bliver til:  3SO<sub>4</sub><sup>2+</sup><sub>(aq)</sub>
+//      (3)     Man kan også vælge at skrive hele formler som LaTex agument til funktionen, som f.eks:  "Fe_2(SO_4)_3_{(s)} ----> 2Fe^{3+}_{(aq)} + 3SO_4^{2+}_{(aq)}"
+function ChemLatexToHtml(LatexStr){
+
+    // IMPORTANT NOTE: LatexEnclosedPramToHtml() has to be called before LatexPramToHtml() because of delimiters "_{" and "^{" contains the "{" start-bracket.
+    LatexStr = LatexEnclosedPramToHtml(LatexStr, "_");  
+    LatexStr = LatexEnclosedPramToHtml(LatexStr, "^");
+    LatexStr = LatexPramToHtml(LatexStr, "_");
+    LatexStr = LatexPramToHtml(LatexStr, "^");
+
+    return LatexStr;
+}
+
+
 /// INDLEJLRING SLUT !
