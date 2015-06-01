@@ -1,43 +1,32 @@
-#UserMsgBox {
-    display: none;
-    z-index: 3;
-    position: absolute;
-    /*font-size: 0.9em;*/
-    
-    border: 1px solid #C0C0C0;
-    background-color: rgba(248, 248, 246, 0.9);
-    z-index: 10;
-    border-radius: 3px;
-    padding: 20px 20px 20px 20px;
-    width: 320px;
-    left:0;
-    right:0;
-    margin-left:auto;
-    margin-right:auto;
-    
-    /*
+#UserMsgBox{display: none; 
+                z-index: 3; 
+                position: absolute; 
+
+                /*font-size: 0.9em;*/
+                border: 1px solid #C0C0C0; 
+                background-color: rgba(248, 248, 246, 0.9);
+                z-index: 10; 
+                border-radius: 3px;
+                padding: 20px 20px 20px 20px;
+                width: 320px;
+                margin-top: 0px;
+        /*
                 IPAD-work-around til at faa HintClass-div's til at lukke:
                 http://stackoverflow.com/questions/7892863/jquery-click-not-working-with-ipad
                 http://www.mitch-solutions.com/blog/17-ipad-jquery-live-click-events-not-working
         */
-    
-    cursor: pointer;
-}
+                cursor:pointer;  
+
+            }
 
 .CloseClass {
-    margin-top: -15px;
-    margin-right: -15px;
-    color: rgba(0, 0, 0, 0.5);
-}
+                margin-top: -15px; 
+                margin-right: -15px;
+                color: rgba(0, 0, 0, 0.5);
+              }
 
-.left {
-    float: left;
-}
+.CapitalI{font-family: "Georgia"; font-weight: 100;}
 
-.right {
-    float: right;
-}
-
-.clear {
-    clear: both;
-}
+.left{float: left;}
+.right{float: right;}
+.clear{clear: both;} 
