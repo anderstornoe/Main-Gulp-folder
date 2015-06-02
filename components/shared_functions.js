@@ -134,20 +134,19 @@ function MarkCertainCharactersAsSpecial(TargetSelectorArray, LetterArray, Letter
 // where the class FeedbackWrap is the target selector in which the UserMsgBox will appear.
 function UserMsgBox(TargetSelector, UserMsg){
 
-
-
-    var HTML = "<h6 id='UserMsgBox'>";
+    var HTML = "<div class = 'MsgBox_bgr'><div id='UserMsgBox'>";
     HTML += '<span class="CloseClass right glyphicon glyphicon-remove"></span><span class="clear"></span>';
     HTML += UserMsg;
-    HTML += "</h6> ";
+    HTML += "</div> </div>";
 
     $(TargetSelector).prepend(HTML);  
 
-    $("#UserMsgBox").fadeIn( "slow" );
+    $(".MsgBox_bgr").fadeIn( "slow" );
 
-    $( document ).on('click', "#UserMsgBox", function(event){
-        event.preventDefault();  // Prevents sending the user to "href".
-        $("#UserMsgBox").fadeOut( "slow" );
+    $(".MsgBox_bgr").click(function(){
+        $(".MsgBox_bgr").fadeOut(200,function(){
+            $(this).remove();
+        });
     });
 }
 

@@ -69,6 +69,8 @@
 
  gulp.task('watch', function() {
      gulp.watch(['objekter/**/builds/development/*.js', 'objekter/**/builds/development/*.html', 'objekter/**/builds/development/*.css'], ['reload']);
+    gulp.watch(['components/*.js', 'components/*.css'], ['reload', 'js', 'css']);
+      
  });
 
 
