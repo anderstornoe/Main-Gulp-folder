@@ -2,7 +2,7 @@
 
 
 // Funktion der sætter fødder på store I'er og små l'er:: 
-function replace_letters(div_container){
+function replace_letters(div_container) {
 
 
     return replaced_string;
@@ -83,8 +83,8 @@ function embedlink(obj) {
     }
 
 
-//<p><iframe width="100%" height="800" frameborder="0" src="http://eundervisning-wp.dk/pf_eng2015/vid_set_da.html"></iframe></p>
-//<p><embed height="800px" src="http://eundervisning-wp.dk/pf_eng2015/vid_set_da.html" width="100%"></embed></p>
+    //<p><iframe width="100%" height="800" frameborder="0" src="http://eundervisning-wp.dk/pf_eng2015/vid_set_da.html"></iframe></p>
+    //<p><embed height="800px" src="http://eundervisning-wp.dk/pf_eng2015/vid_set_da.html" width="100%"></embed></p>
 
 
     function changeLink(indeks) {
@@ -95,9 +95,9 @@ function embedlink(obj) {
 
     }
 
-    $(".embedtext").click(function () {
-   $(this).select();
-});
+    $(".embedtext").click(function() {
+        $(this).select();
+    });
 }
 
 
@@ -108,43 +108,43 @@ function embedlink(obj) {
 // EXAMPLE CALL:
 //          MarkCertainCharactersAsSpecial([".AtomName", ".AtomSymbol"], ["H","L", "S"], ["FontGreen", "FontRed", "FontBlue"], "#");
 // - which will make all L's red and all H's green in the text-strings associated with the target CSS classes ".AtomName" and ".AtomSymbol".
-function MarkCertainCharactersAsSpecial(TargetSelectorArray, LetterArray, LetterClassArray, Delimiter){
-    for (var TargetSelector in TargetSelectorArray){
-        $(TargetSelectorArray[TargetSelector]).each(function( index, element ) {
-            for (var l in LetterArray){ // First surround all letters (or clusters of letters) in LetterArray with delimiters, eg. If letter = L and delimiter = #, then #L#.
+function MarkCertainCharactersAsSpecial(TargetSelectorArray, LetterArray, LetterClassArray, Delimiter) {
+    for (var TargetSelector in TargetSelectorArray) {
+        $(TargetSelectorArray[TargetSelector]).each(function(index, element) {
+            for (var l in LetterArray) { // First surround all letters (or clusters of letters) in LetterArray with delimiters, eg. If letter = L and delimiter = #, then #L#.
                 var ElementText = $(element).text();
-                if (ElementText.indexOf(LetterArray[l]) !== -1){
-                    $(element).html( ElementText.replace(LetterArray[l], Delimiter + LetterArray[l] + Delimiter) );
+                if (ElementText.indexOf(LetterArray[l]) !== -1) {
+                    $(element).html(ElementText.replace(LetterArray[l], Delimiter + LetterArray[l] + Delimiter));
                 }
             }
 
-            for (var l in LetterArray){// second, replace all delimited letters, eg. #L#, with <span class="MyClass">L</span>
-                var LetterClass = (LetterClassArray.length == LetterArray.length) ? LetterClassArray[l] : LetterClassArray[0]; 
+            for (var l in LetterArray) { // second, replace all delimited letters, eg. #L#, with <span class="MyClass">L</span>
+                var LetterClass = (LetterClassArray.length == LetterArray.length) ? LetterClassArray[l] : LetterClassArray[0];
                 var ElementText = $(element).text();
-                if (ElementText.indexOf(LetterArray[l]) !== -1){
-                    $(element).html( ElementText.replace( Delimiter + LetterArray[l] + Delimiter, '<span class="'+LetterClass+'">'+LetterArray[l]+'</span>' ) );
+                if (ElementText.indexOf(LetterArray[l]) !== -1) {
+                    $(element).html(ElementText.replace(Delimiter + LetterArray[l] + Delimiter, '<span class="' + LetterClass + '">' + LetterArray[l] + '</span>'));
                 }
             }
         });
     }
 }
- 
+
 // Example of use:
 //      UserMsgBox(".FeedbackWrap", "Hurra - korrekt svar!");
 // where the class FeedbackWrap is the target selector in which the UserMsgBox will appear.
-function UserMsgBox(TargetSelector, UserMsg){
+function UserMsgBox(TargetSelector, UserMsg) {
 
     var HTML = "<div class = 'MsgBox_bgr'><div id='UserMsgBox'>";
     HTML += '<span class="CloseClass right glyphicon glyphicon-remove"></span><span class="clear"></span>';
     HTML += UserMsg;
     HTML += "</div> </div>";
+    $
+    $(TargetSelector).prepend(HTML);
 
-    $(TargetSelector).prepend(HTML);  
+    $(".MsgBox_bgr").fadeIn("slow");
 
-    $(".MsgBox_bgr").fadeIn( "slow" );
-
-    $(".MsgBox_bgr").click(function(){
-        $(".MsgBox_bgr").fadeOut(200,function(){
+    $(".MsgBox_bgr").click(function() {
+        $(".MsgBox_bgr").fadeOut(200, function() {
             $(this).remove();
         });
     });
@@ -152,41 +152,45 @@ function UserMsgBox(TargetSelector, UserMsg){
 
 
 // Dette er en hjælpefunktion til funktionen ChemLatexToHtml() forneden:
-function LatexEnclosedPramToHtml(LatexStr, Delimiter){
+function LatexEnclosedPramToHtml(LatexStr, Delimiter) {
 
-    var StartPos = 0; var EndPos = 0; var Val = ""; var count = 0;
+    var StartPos = 0;
+    var EndPos = 0;
+    var Val = "";
+    var count = 0;
     do {
-        StartPos = LatexStr.indexOf(Delimiter+"{", EndPos); 
-        if (StartPos !== -1){
-            EndPos = LatexStr.indexOf("}", StartPos+2);
-            if (EndPos !== -1){
-                Val = LatexStr.substring(StartPos+2, EndPos);
-                LatexStr = LatexStr.substring(0,StartPos) + ((Delimiter == "^")?'<sup>'+Val+'</sup>':'<sub>'+Val+'</sub>') + LatexStr.substring(EndPos+1);
-            }
-            else{
-                alert("Fejl i LaTex udtryk:\nStart-tuborg-parentes "+ String(StartPos) + " tegn inde i LaTex-udtrykket har ikke en slut-tuborg-parentes!");
+        StartPos = LatexStr.indexOf(Delimiter + "{", EndPos);
+        if (StartPos !== -1) {
+            EndPos = LatexStr.indexOf("}", StartPos + 2);
+            if (EndPos !== -1) {
+                Val = LatexStr.substring(StartPos + 2, EndPos);
+                LatexStr = LatexStr.substring(0, StartPos) + ((Delimiter == "^") ? '<sup>' + Val + '</sup>' : '<sub>' + Val + '</sub>') + LatexStr.substring(EndPos + 1);
+            } else {
+                alert("Fejl i LaTex udtryk:\nStart-tuborg-parentes " + String(StartPos) + " tegn inde i LaTex-udtrykket har ikke en slut-tuborg-parentes!");
                 break;
             }
         }
         ++count;
-    } while ((StartPos !== -1) &&  (count < 100));
+    } while ((StartPos !== -1) && (count < 100));
 
     return LatexStr;
 }
 
 
 // Dette er en hjælpefunktion til funktionen ChemLatexToHtml() forneden:
-function LatexPramToHtml(LatexStr, Delimiter){
+function LatexPramToHtml(LatexStr, Delimiter) {
 
-    var StartPos = 0; var Val = ""; var count = 0;
+    var StartPos = 0;
+    var Val = "";
+    var count = 0;
     do {
-        StartPos = LatexStr.indexOf(Delimiter); 
-        if (StartPos !== -1){
-            Val = LatexStr.substring(StartPos+1, StartPos+2);
-            LatexStr = LatexStr.substring(0,StartPos) + ((Delimiter == "^")?'<sup>'+Val+'</sup>':'<sub>'+Val+'</sub>') + LatexStr.substring(StartPos+2);
+        StartPos = LatexStr.indexOf(Delimiter);
+        if (StartPos !== -1) {
+            Val = LatexStr.substring(StartPos + 1, StartPos + 2);
+            LatexStr = LatexStr.substring(0, StartPos) + ((Delimiter == "^") ? '<sup>' + Val + '</sup>' : '<sub>' + Val + '</sub>') + LatexStr.substring(StartPos + 2);
         }
         ++count;
-    } while ((StartPos !== -1) &&  (count < 100));
+    } while ((StartPos !== -1) && (count < 100));
 
     return LatexStr;
 }
@@ -199,10 +203,10 @@ function LatexPramToHtml(LatexStr, Delimiter){
 //      (1)     ChemLatexToHtml( "Fe_2(SO_4)_3_{(s)}" );   bliver til:  Fe<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub><sub>(s)</sub>
 //      (2)     ChemLatexToHtml( "3SO_4^{2+}_{(aq)}" );    bliver til:  3SO<sub>4</sub><sup>2+</sup><sub>(aq)</sub>
 //      (3)     Man kan også vælge at skrive hele formler som LaTex agument til funktionen, som f.eks:  "Fe_2(SO_4)_3_{(s)} ----> 2Fe^{3+}_{(aq)} + 3SO_4^{2+}_{(aq)}"
-function ChemLatexToHtml(LatexStr){
+function ChemLatexToHtml(LatexStr) {
 
     // IMPORTANT NOTE: LatexEnclosedPramToHtml() has to be called before LatexPramToHtml() because of delimiters "_{" and "^{" contains the "{" start-bracket.
-    LatexStr = LatexEnclosedPramToHtml(LatexStr, "_");  
+    LatexStr = LatexEnclosedPramToHtml(LatexStr, "_");
     LatexStr = LatexEnclosedPramToHtml(LatexStr, "^");
     LatexStr = LatexPramToHtml(LatexStr, "_");
     LatexStr = LatexPramToHtml(LatexStr, "^");
@@ -212,3 +216,25 @@ function ChemLatexToHtml(LatexStr){
 
 
 /// INDLEJLRING SLUT !
+
+
+$.fn.shuffle_div_position = function() {
+
+    var allElems = this.get(),
+        getRandom = function(max) {
+            return Math.floor(Math.random() * max);
+        },
+        shuffled = $.map(allElems, function() {
+            var random = getRandom(allElems.length),
+                randEl = $(allElems[random]).clone(true)[0];
+            allElems.splice(random, 1);
+            return randEl;
+        });
+
+    this.each(function(i) {
+        $(this).replaceWith($(shuffled[i]));
+    });
+
+    return $(shuffled);
+
+};
