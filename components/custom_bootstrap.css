@@ -1,5 +1,3 @@
-
-
 @font-face {
     font-family: 'OpenSans';
     font-style: normal;
@@ -35,10 +33,6 @@
     /*padding: 4px 20px;*/
     
     margin-right: 20px;
-}
-
-h4{
-    color:#999;
 }
 
 .btn-lg,
@@ -213,10 +207,4 @@ a.MetaDataLink:hover {
 img.pdf-icon {
     width:40px;
     margin-right: 5px;
-}
-
-.btn-info.active, .btn-info.focus, .btn-info:active, .btn-info:focus, .btn-info:hover, .open>.dropdown-toggle.btn-info {
-  color: #000;
-  background-color: orange;
-  border-color: orange;
 }
