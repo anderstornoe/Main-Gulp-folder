@@ -208,3 +208,7 @@ img.pdf-icon {
     width:40px;
     margin-right: 5px;
 }
+
+.container, .container-fluid{
+    background-color: #f8f8f6;
+}

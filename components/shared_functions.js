@@ -219,7 +219,6 @@ function ChemLatexToHtml(LatexStr) {
 
 
 $.fn.shuffle_div_position = function() {
-
     var allElems = this.get(),
         getRandom = function(max) {
             return Math.floor(Math.random() * max);
@@ -234,7 +233,10 @@ $.fn.shuffle_div_position = function() {
     this.each(function(i) {
         $(this).replaceWith($(shuffled[i]));
     });
-
     return $(shuffled);
-
 };
+
+function shuffle_Array(o){
+    for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+    return o;
+}
