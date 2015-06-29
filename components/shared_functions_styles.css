@@ -1,26 +1,18 @@
 #UserMsgBox {
-    z-index: 3;
-    position: absolute;
-    /*font-size: 0.9em;*/
-    
-    border: 1px solid #C0C0C0;
-    background-color: rgba(248, 248, 246, 0.9);
-    z-index: 10;
-    border-radius: 3px;
-    padding: 25px 25px 20px 20px;
-    width: 320px;
-    left:0;
-    right:0;
-    margin-left:auto;
-    margin-right:auto;
-    top:30%;
-    /*
-                IPAD-work-around til at faa HintClass-div's til at lukke:
-                http://stackoverflow.com/questions/7892863/jquery-click-not-working-with-ipad
-                http://www.mitch-solutions.com/blog/17-ipad-jquery-live-click-events-not-working
-        */
-        
-    cursor: pointer;
+  border: 0px solid silver;
+  background-color: rgba(248,248,246,0.9);
+  border-radius: 3px;
+  padding: 30px 30px 40px 40px;
+  width: 400px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  top: 30%;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1.3em;   
+  position: absolute;
 }
 
 .MsgBox_bgr {
