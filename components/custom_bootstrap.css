@@ -1,3 +1,20 @@
+<<<<<<< HEAD
+/*@font-face {
+    font-family: 'OpenSans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Open Sans'), local('OpenSans'), url("//themes.googleusercontent.com/static/fonts/opensans/v6/u-WUoqrET9fUeobQW7jkRT8E0i7KZn-EPnyo3HZu7kw.woff") format('woff');
+}*/
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Roboto Slap'), local('Roboto'), url("../fonts/Roboto_Slab/RobotoSlab-Regular.ttf") format('ttf');
+}
+=======
+>>>>>>> 056c77c7929e393fa233fe643fab3312147020f0
+
 
 @media (max-width: 992px) {
     .h2 {
