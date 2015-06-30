@@ -17,6 +17,7 @@
     "jquery": "~2.1.4",
     "jquery-ui": "~1.11.4",
     "bootstrap": "~3.3.4",
-    "jquery-ui-touch-punch": "*"
+    "jquery-ui-touch-punch": "*",
+    "roboto-fontface": "~0.4.2"
   }
 }
