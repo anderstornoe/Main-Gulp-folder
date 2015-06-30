@@ -20,7 +20,7 @@
 @font-face {
   font-family: 'Merriweather';
   font-style: normal;
-  font-weight: 100;
+  font-weight: 200;
   src: local('Merriweather Light'), local('Merriweather-Light'), url("../fonts/merriweather.woff") format('woff');
 }
 
