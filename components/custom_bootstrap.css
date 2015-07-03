@@ -47,7 +47,7 @@
     margin-right: 20px;
 }
 
-h4, .h4{
+h4, .h4, h5, .h5{
     color: #777;
 }
 
@@ -227,4 +227,13 @@ img.pdf-icon {
 
 .container, .container-fluid{
     background-color: #f8f8f6;
+}
+
+.feedbackbox_txtstyle_overskrift{
+    font-size: 18px;
+    font-family: "Open Sans";
+    color: rgb(51, 51, 51);
+    font-weight: bold;
+    line-height: 1.2;
+    text-align: left;
 }

@@ -11,7 +11,7 @@
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 
 @font-face {
-    font-family: 'OpenSans';
+    font-family: 'OpenSans', "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-style: normal;
     font-weight: 200;
      src: local('Open Sans'), local('OpenSans'), url("../fonts/open-sans.woff") format('woff');
@@ -20,7 +20,7 @@
 @font-face {
   font-family: 'Merriweather';
   font-style: normal;
-  font-weight: 100;
+  font-weight: 200;
   src: local('Merriweather Light'), local('Merriweather-Light'), url("../fonts/merriweather.woff") format('woff');
 }
 
