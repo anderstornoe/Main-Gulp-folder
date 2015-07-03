@@ -22,8 +22,12 @@ function embedlink(obj) {
 
     // alert($(".tab").length);
 
-    var embedFronter = '<iframe height="570" width="820" src="http://eundervisning-wp.dk/pf_eng2015/' + obj.parent().parent().find("a").eq(0).attr("href") + '"></iframe>';
-    var embedMoodle = '<embed height="670" width="970" src="http://eundervisning-wp.dk/pf_eng2015/' + obj.parent().parent().find("a").eq(0).attr("href") + '"></embed>';
+    var UrlVarStr;
+    UrlVarStr = String(window.location).split("/", 4).join("/"); 
+    console.log("embedlink - UrlVarStr: " + UrlVarStr);
+
+    var embedFronter = '<iframe height="570" width="820" src="'+UrlVarStr+'/' + obj.parent().parent().find("a").eq(0).attr("href").replace("../../../", "") + '"></iframe>';
+    var embedMoodle = '<embed height="670" width="970" src="'+UrlVarStr+'/' + obj.parent().parent().find("a").eq(0).attr("href").replace("../../../", "") + '"></embed>';
 
     var embedArray = [embedMoodle, embedFronter];
 
