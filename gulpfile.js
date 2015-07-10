@@ -37,7 +37,7 @@
      gulp.src(jsSources)
          //.on('error', swallowError)
          .pipe(concat("vendor_scripts.js"))
-         .pipe(uglify())
+         // .pipe(uglify())                                 // Udkommenteret af THAN d. 3/6-2015, pga problemer med gulp-uglify. 
          //.pipe(gulpif(env === 'production', uglify()))
          .pipe(gulp.dest('objekter/library'))
 
