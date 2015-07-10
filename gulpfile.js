@@ -21,7 +21,6 @@
          'bower_components/jquery-ui/jquery-ui.js',
          'bower_components/bootstrap/dist/js/bootstrap.js',
          'bower_components/jquery-ui-touch-punch/jquery.ui.touch-punch.js',
-         'components/shared_functions.js'
      ];
 
  cssSources = [
@@ -41,6 +40,12 @@
          // .pipe(uglify())                                 // Udkommenteret af THAN d. 3/6-2015, pga problemer med gulp-uglify. 
          //.pipe(gulpif(env === 'production', uglify()))
          .pipe(gulp.dest('objekter/library'))
+
+     gulp.src('components/shared_functions.js')
+         .pipe(concat("custom_scripts.js"))
+         .pipe(uglify())
+         //.pipe(gulpif(env === 'production', uglify()))
+         .pipe(gulp.dest('objekter/library'))
          .pipe(connect.reload())
  });
 
@@ -56,21 +61,21 @@
 
 
  gulp.task('copy_production', function() {
-     gutil.log("Its time to production mode it!");
+     //gutil.log("Its time to production mode it!");
      //objekter/kemi_drag/builds/development/
-     gulp.src(['objekter/**/builds/**/*'])
+     gulp.src(['objekter/**/builds/development/**/*'])
 
      .pipe(gulp.dest('objekter/production'))
          //.pipe(wait(1500))
          //gulp.task('trim_files');
 
-    gulp.src(['objekter/library/**/*'])
+     gulp.src(['objekter/library/**/*'])
 
      .pipe(gulp.dest('objekter/production/library'))
          //.pipe(wait(1500))
          //gulp.task('trim_files');
 
-              
+
  });
 
  gulp.task('trim_files', function() {
