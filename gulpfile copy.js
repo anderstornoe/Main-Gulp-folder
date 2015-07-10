@@ -7,7 +7,6 @@
      minifyHTML = require('gulp-minify-html'),
      concat = require('gulp-concat'),
      jshint = require('gulp-jshint');
- wait = require('gulp-wait');
 
  var env,
      jsSources,
@@ -16,13 +15,13 @@
      //outputDir;
 
 
-     jsSources = [
-         'bower_components/jquery/dist/jquery.js',
-         'bower_components/jquery-ui/jquery-ui.js',
-         'bower_components/bootstrap/dist/js/bootstrap.js',
-         'bower_components/jquery-ui-touch-punch/jquery.ui.touch-punch.js',
-         'components/shared_functions.js'
-     ];
+ jsSources = [
+     'bower_components/jquery/dist/jquery.js',
+     'bower_components/jquery-ui/jquery-ui.js',
+     'bower_components/bootstrap/dist/js/bootstrap.js',
+     'bower_components/jquery-ui-touch-punch/jquery.ui.touch-punch.js',
+     'components/shared_functions.js'
+ ];
 
  cssSources = [
      'components/*.css'
@@ -34,7 +33,7 @@
  });
 
  gulp.task('js', function() {
-     // Concat evt egne scripts til shared_functions.js 
+    // Concat evt egne scripts til shared_functions.js 
      gulp.src(jsSources)
          //.on('error', swallowError)
          .pipe(concat("vendor_scripts.js"))
@@ -54,50 +53,6 @@
          .pipe(connect.reload())
  });
 
-
- gulp.task('copy_production', function() {
-     gutil.log("Its time to production mode it!");
-     //objekter/kemi_drag/builds/development/
-     gulp.src(['objekter/**/builds/**/*'])
-
-     .pipe(gulp.dest('objekter/production'))
-         //.pipe(wait(1500))
-         //gulp.task('trim_files');
-
-    gulp.src(['objekter/library/**/*'])
-
-     .pipe(gulp.dest('objekter/production/library'))
-         //.pipe(wait(1500))
-         //gulp.task('trim_files');
-
-              
- });
-
- gulp.task('trim_files', function() {
-     gulp.src("objekter/**/builds/production/*.css")
-         //.pipe(wait(1500))
-         .pipe(minifyCSS({
-             keepBreaks: false,
-         }))
-         .pipe(gulp.dest('objekter/**/builds/production/'))
-
-     gulp.src("objekter/**/builds/production/*.html")
-         .pipe(minifyHTML())
-
-     .pipe(gulp.dest('objekter/**/builds/production/'))
-
-
-
-     gulp.src("objekter/**/builds/production/*.js")
-         .pipe(uglify())
-
-     .pipe(gulp.dest('objekter/**/builds/production/'))
-
-     //.pipe(uglify())
-
-     gutil.log("all done");
- });
-
  gulp.task('css', function() {
      gulp.src(cssSources)
          .pipe(concat("styles.css"))
@@ -114,8 +69,8 @@
 
  gulp.task('watch', function() {
      gulp.watch(['objekter/**/builds/development/*.js', 'objekter/**/builds/development/*.html', 'objekter/**/builds/development/*.css'], ['reload']);
-     gulp.watch(['components/*.js', 'components/*.css'], ['reload', 'js', 'css']);
-
+    gulp.watch(['components/*.js', 'components/*.css'], ['reload', 'js', 'css']);
+      
  });
 
 
