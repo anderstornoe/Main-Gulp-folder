@@ -7,7 +7,7 @@
      minifyHTML = require('gulp-minify-html'),
      concat = require('gulp-concat'),
      jshint = require('gulp-jshint');
- wait = require('gulp-wait');
+    wait = require('gulp-wait');
 
  var env,
      jsSources,
