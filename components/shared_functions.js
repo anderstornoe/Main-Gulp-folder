@@ -23,14 +23,14 @@ function embedlink(obj) {
     // alert($(".tab").length);
 
     var UrlVarStr;
-    UrlVarStr = String(window.location).split("/", 3).join("/").replace("http", "https"); 
+    UrlVarStr = String(window.location).split("/", 3).join("/").replace("http", "https");
     console.log("embedlink - UrlVarStr: " + UrlVarStr);
 
     var HrefObj = obj.parent().parent().find("a").eq(0).attr("href").replace("../../../", "");
     console.log("embedlink - HrefObj: " + HrefObj);
 
-    var embedFronter = '<iframe height="570" width="820" src="'+UrlVarStr+'/pf_kem2015/'+HrefObj+'"></iframe>';
-    var embedMoodle = '<embed height="670" width="970" src="'+UrlVarStr+'/pf_kem2015/'+HrefObj+'"></embed>';
+    var embedFronter = '<iframe height="570" width="820" src="' + UrlVarStr + '/pf_kem2015/' + HrefObj + '"></iframe>';
+    var embedMoodle = '<embed height="670" width="970" src="' + UrlVarStr + '/pf_kem2015/' + HrefObj + '"></embed>';
 
     // var embedFronter = '<iframe height="570" width="820" src="http://eundervisning-wp.dk/pf_kem2015/' + obj.parent().parent().find("a").eq(0).attr("href") + '"></iframe>';
     // var embedMoodle = '<embed height="670" width="970" src="http://eundervisning-wp.dk/pf_kem2015/' + obj.parent().parent().find("a").eq(0).attr("href") + '"></embed>';
@@ -247,7 +247,15 @@ $.fn.shuffle_div_position = function() {
     return $(shuffled);
 };
 
-function shuffle_Array(o){
-    for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+function shuffle_Array(o) {
+    for (var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
     return o;
 }
+
+$(document).ready(function() {
+    var isInIFrame = (window.location != window.parent.location);
+
+    if (isInIFrame) {
+        $("h1").append("<a class='new_window_link' href='" + window.location.href + "' target='_blank'><span class='glyphicon glyphicon-new-window'></span>Åbn i nyt vindue</a>");
+    }
+});
