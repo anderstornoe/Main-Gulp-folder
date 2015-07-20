@@ -15,6 +15,9 @@ function footer() {
     $(".container, .container-fluid").append("<div class='col-xs-12 vuc_footer'><h2>Digitale læringsmaterialer på voksenuddannelser</h2><h6 class='footerText'>Udviklet af et produktionsfællesskab mellem otte VUC’er til anvendelse på de deltagende skoler: <br/> Hf og VUC Nordsjælland, VUC Hvidovre-Amager, VUC Roskilde, VUC Vestegnen, VUF, VUC Storstrøm, VUC Aarhus og Københavns VUC (KVUC).</h6> <h6 class='footerCopywrite'> Copyright 2015 </h6></div >");
 }
 
+function one_line_footer () {
+    $('.container, .container-fluid').append('<div class="col-xs-12"><h6 class="footerCopywrite"> <a href="om_projektet.html">Digitale læringsmaterialer  Copyright 2015</a></h6></div>')
+}
 
 /// INDLEJRINGS    FUNKTIONALITET  ///////
 
