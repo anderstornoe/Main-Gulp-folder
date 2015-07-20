@@ -16,7 +16,7 @@ function footer() {
 }
 
 function one_line_footer () {
-    $('.container, .container-fluid').append('<div class="col-xs-12"><h6 class="footerCopywrite"> <a href="om_projektet.html">Digitale læringsmaterialer  Copyright 2015</a></h6></div>')
+    $('.container, .container-fluid').append('<div class="col-xs-12"><h6 class="footerCopywrite"> <a href="../../../kemiC_visningsite/builds/development/om_projektet.html">Digitale læringsmaterialer  Copyright 2015</a></h6></div>')
 }
 
 /// INDLEJRINGS    FUNKTIONALITET  ///////
